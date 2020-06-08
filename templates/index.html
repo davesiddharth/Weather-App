@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Weather Dashboard</title>
+
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Leaflet JavaScript -->
+        <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+        <!-- D3 JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+        <!-- <h1>Hi, You Are here</h1> -->
+        <!--Adding the nav bar  -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color:lightskyblue ;" >
+                <a class="navbar-brand" href="#"><strong>Know your Weather!</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="form-inline my-2 my-lg-0">
+                <input id="city" class="form-control mr-sm-2" type="search" placeholder="Enter your City" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <button type="button" class="btn my-sm-2 " style="background-color:papayawhip;">Past three Days!</button>
+                    
+                  </li>&nbsp;
+                  <li class="nav-item active">
+                    <button type="button" class="btn my-sm-2" style="background-color:papayawhip;">Past five Days!</button>
+                  
+                </li>&nbsp;
+                <li class="nav-item active">
+                    <button type="button" class="btn my-sm-2" style="background-color:papayawhip;">Past week!</button>
+                  
+                </li>
+                </ul>
+            </div>
+            
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class=container>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="weather_card">
+                                    <h2>Weather Card</h2>
+                                 </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="plot">
+                                    <h2>Scatter-plot</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div id="map">
+                        <h2>Leaflet map</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Add script for weather card  -->
+        <script type="text/javascript" src="static/js/jtest.js"></script>
+        <!--Add script for leaflet map  -->
+        <!-- Add script for scatter plot -->
+    </body>
+</html>
