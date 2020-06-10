@@ -51,6 +51,7 @@ body {
 
 #humidity, #wind, #visibility {
 	font-size: 1.2rem;
+	font-weight: bold;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
