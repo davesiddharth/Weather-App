@@ -107,7 +107,7 @@ function runEnter() {
                     var humidityElem = document.getElementById("humidity");
                     humidityElem.innerHTML = `${humidity}%`;
                     var windElem = document.getElementById("wind");
-                    windElem.innerHTML = `${windSpeed}m/h`;
+                    windElem.innerHTML = `${windSpeed} mph`;
                     var visibilityElem = document.getElementById("visibility");
                     visibilityElem.innerHTML = `${visibility} miles`;
                 }
