@@ -1,0 +1,57 @@
+/*
+	stylesheet for weather app
+*/
+body {
+	background-image: url("../images/image1.png");
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+    color: rgb(255, 255, 255);
+}
+
+/* weather section */
+#weather_card {
+	border:2px solid white;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	color: rgb(252, 252, 252);
+}
+
+.weather-head {
+	height: 50%;
+}
+
+#icon-desc {
+	font-size: 5rem;
+	padding-top: 2rem;
+}
+
+.humidity, .wind, .visibility {
+	border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid white; */
+	font-size: 1.1 rem strong;
+
+}
+
+#description {
+	font-size: 2rem;
+}
+
+#temperature {
+	font-size: 7rem;
+}
+
+#icon-thermometer {
+	font-size: 5rem;
+}
+
+#humidity, #wind, #visibility {
+	font-size: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+
