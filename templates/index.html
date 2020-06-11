@@ -35,7 +35,7 @@
                 <input id="city" class="form-control mr-sm-2" type="search" placeholder="New York" aria-label="Search">
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- commented out remove the past days options <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
@@ -51,7 +51,8 @@
                   
                 </li>
                 </ul>
-            </div>
+            </div>-->
+            <span id="date" class="navbar-brand" style="position:relative; left:850px; top:2px background-color:papayawhip">11:00AM | Mar 3, 2018</span>
             
         </nav>
         <div class="container">
@@ -62,13 +63,13 @@
                             <div class="col-md-12">
                                 <div id="weather_card" class="col-md-12">
                                         <div class="weather-head">
-                                            <h1 id="location" class="text-center display-4">New York</h1>
+                                            <h1 id="location" class="text-center display-4">City</h1>
                                             <div class="row">							
                                                 <div id="description" class="description col-6 text-center">
                                                     <i id="icon-desc" class="wi wi-owm-200"></i>
-                                                    <p class="desc">Thunderstorm</p>			
+                                                    <p class="desc"></p>			
                                                 </div>
-                                                <div id="temperature" class="col-md-6 text-center">80<i id="icon-thermometer" class="wi wi-thermometer"></i>					
+                                                <div id="temperature" class="col-md-6 text-center"><i id="icon-thermometer" class="wi wi-thermometer"></i>					
                                                 </div>	
                                             </div>
                                             <!-- weather body header -->
@@ -87,13 +88,13 @@
                                                 <!-- weather body data -->
                                                 <div class="row">
                                                     <div id="humidity" class="humidity-data col-md-4 text-center">
-                                                        75%
+                                                        %
                                                     </div>
                                                     <div id="wind" class="wind-data col-md-4 text-center">
-                                                        34mph
+                                                        mph
                                                     </div>
                                                     <div id="visibility" class="degree-data col-md-4 text-center">
-                                                        235
+                                                        miles
                                                     </div>
                                                 </div>
                                             </div>						
