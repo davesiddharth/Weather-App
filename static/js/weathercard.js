@@ -1,3 +1,8 @@
+//setting the date
+    var dateElem = document.getElementById("date");
+    var currentDate = new Date();
+    dateElem.innerHTML = currentDate.toDateString();
+
 // Select the button
 var button = d3.select(".btn");
 
@@ -44,11 +49,7 @@ function runEnter() {
         var location = document.getElementById("location");	
         var currentDate = new Date();
         //console.log(currentDate);
-        var dayNight = "day";	
-
-        //setting the date
-        // var dateElem = document.getElementById("date");
-        // dateElem.innerHTML = currentDate.toDateString();
+        var dayNight = "day";
 
         //calling flask api function
         httpReqIpAsync(ipUrl);							
