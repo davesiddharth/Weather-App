@@ -17,7 +17,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	margin:0 auto;
-    color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
 }
 
 .overall {
@@ -25,7 +25,18 @@ body {
 	margin-right:25px;
 	margin-top: 25px;
 	margin-bottom: 25px;
+	padding-top: 75px;
   }
+
+.navbar {
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+  }
+
+.container-fluid {
+	padding-top: 45px;
+}
 
 /* weather section */
 #weather_card {
