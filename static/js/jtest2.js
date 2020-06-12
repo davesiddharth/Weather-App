@@ -1,5 +1,5 @@
-var svgWidth = 960;
-var svgHeight = 500;
+var svgWidth = 600;
+var svgHeight = 400;
 
 var margin ={
     top: 20,
@@ -33,6 +33,35 @@ form.on("submit",plotRunEnter);
 var parseTime=d3.timeParse("%B");
 
  
+//Scaling xaxis function
+// function xScale(weatherData, chosenXAxis){
+//     var xTimeScale;
+//     // while()
+//     var dataChosen=[];
+//     for(var i=weatherData.length-7;i<weatherData.length-1;i++){
+//             dataChosen.push(weatherData[i]);
+
+//     }
+//     console.log(weatherData);
+//     if (chosenXAxis==="week"){
+//         xTimeScale=d3.scaleTime()
+//         .range([0, width-100])
+//     .domain(d3.extent(dataChosen, data => data.dt));
+//     }
+//     // var xTimeScale = d3.scaleTime()
+//     // .range([0, width-100])
+//     // .domain(d3.extent(weatherData, data => data.dt));
+
+
+//     //var xLinearScale = d3.scaleLinear().domain([0, 8]).range([0, width - 100]);
+//     // var xLinearScale= d3.scaleLinear()
+//     // .domain([d3.min(newsData, d=>d[chosenXAxis])-1,d3.max(newsData, d=>d[chosenXAxis])+1])
+//     // .range([0,width]);
+//     return xTimeScale;
+//    // return xLinearScale;
+
+// } 
+
 //Scaling y axis function
 function yScale(weatherData, chosenYAxis){
     var yLinearScale= d3.scaleLinear()
@@ -78,6 +107,9 @@ function renderCircles(circlesGroup,newScale,chosenAxis){
 
 }
 
+
+
+
 //Updating tooltip function
 function updateToolTip(chosenXAxis,chosenYAxis,circlesGroup){
     var xLabel;
@@ -117,7 +149,9 @@ function updateToolTip(chosenXAxis,chosenYAxis,circlesGroup){
         });
 
     return circlesGroup;
+
 }
+
 
  //function to render the plot
  function plotRunEnter(){
@@ -130,7 +164,8 @@ function updateToolTip(chosenXAxis,chosenYAxis,circlesGroup){
                  .attr("height",svgHeight);
 
 //Adding the chart group
-
+var bgColor = document.getElementById("plot");
+bgColor.getElementsByTagName("svg")[0].style.backgroundColor="#e6e6fa";
 var chartGroup = svg.append("g")
         .attr("transform",`translate(${margin.left},${margin.top})`);
 
@@ -168,6 +203,8 @@ var chartGroup = svg.append("g")
     
         }
 
+    //xlinearScale function
+    //var xLinearScale= xScale(weatherData, chosenXAxis);
     var xLinearScale = d3.scaleLinear().domain([0, 7]).range([0, width]);
        
     var yLinearScale= yScale(dataChosen, chosenYAxis);
@@ -179,11 +216,11 @@ var chartGroup = svg.append("g")
     // append x axis
     var xAxis = chartGroup.append("g")
     .classed("x-axis", true)
-    .attr("transform", `translate(0, ${height})`)
+    .attr("transform", `translate(0, ${height})`).attr("stroke-width",3)
     .call(bottomAxis);
 
     // append y axis
-    var yAxis=chartGroup.append("g")
+    var yAxis=chartGroup.append("g").attr("stroke-width",3)
     .call(leftAxis);
 
     //Create circles
@@ -198,6 +235,8 @@ var chartGroup = svg.append("g")
                                 .attr("opacity","0.75")
                                 .classed("stateCircle",true);
 
+    
+
     //Adding ToolTip 
    var circlesGroup= updateToolTip(chosenXAxis,chosenYAxis,circlesGroup);
     
@@ -206,12 +245,24 @@ var chartGroup = svg.append("g")
     var xLabelsGroup= chartGroup.append("g")
                                 .attr("transform",`translate(${width / 2}, ${height + 20})`);
     
+    // var threeDayLabel = xLabelsGroup.append("text")
+    //                             .attr("x", 0)
+    //                             .attr("y", 20)
+    //                             .attr("value", "three days") // value to grab for event listener
+    //                             .classed("active", true)
+    //                             .text("Three Days");
+    // var fiveDayLabel = xLabelsGroup.append("text")
+    //                             .attr("x", 0)
+    //                             .attr("y", 40)
+    //                             .attr("value", "five days") // value to grab for event listener
+    //                             .classed("inactive", true)
+    //                             .text("Five Days");
     var weekLabel = xLabelsGroup.append("text")
                                 .attr("x", 0)
                                 .attr("y", 20)
                                 .attr("value", "week") // value to grab for event listener
                                 .classed("active", true)
-                                .text("A week");                            
+                                .text("Days");                            
 
 
     //Group for y Axis labels
@@ -239,6 +290,61 @@ var chartGroup = svg.append("g")
                                 .attr("value", "pressure") // value to grab for event listener
                                 .classed("inactive", true)
                                 .text("Pressure");                            
+    
+    // x axis labels event listner
+//     xLabelsGroup.selectAll("text")
+//         .on("click",function(){
+// //Getting the value selected
+//     var value =d3.select(this).attr("value");
+//     if(value !== chosenXAxis){
+//         //new chosen value
+//         chosenXAxis= value;
+//         //rendering the new scale
+//         xLinearScale=xScale(weatherData,chosenXAxis);
+//         //rendering the new axis
+//         xAxis= renderAxes(xLinearScale,chosenXAxis,xAxis);
+//         // rendering the new circles and their labels
+//         circlesGroup= renderCircles(circlesGroup,xLinearScale,chosenXAxis);
+//         // circlesLabels=renderCircleLabels(circlesLabels,xLinearScale,chosenXAxis);
+
+//         //Updating the tooltip
+//         circlesGroup=updateToolTip(chosenXAxis,chosenYAxis,circlesGroup);
+
+//         //change the chosen axis to bold
+//         if(chosenXAxis ==="age"){
+//             povertyLabel.classed("active",false)
+//                         .classed("inactive",true);
+//             ageLabel.classed("active",true)
+//                     .classed("inactive",false);
+//             incomeLabel.classed("active",false)
+//                         .classed("inactive",true);
+
+//         }
+//         else if(chosenXAxis ==="income"){
+//             povertyLabel.classed("active",false)
+//                         .classed("inactive",true);
+//             ageLabel.classed("active",false)
+//                     .classed("inactive",true);
+//             incomeLabel.classed("active",true)
+//                         .classed("inactive",false);
+                        
+
+//         }
+//         else if(chosenXAxis ==="poverty"){
+//             povertyLabel.classed("active",true)
+//                         .classed("inactive",false);
+//             ageLabel.classed("active",false)
+//                     .classed("inactive",true);
+//             incomeLabel.classed("active",false)
+//                         .classed("inactive",true);
+                        
+
+//         }
+
+// }
+
+//                 })
+                //console.log(chosenXAxis);
 
     yLabelsGroup.selectAll("text")
                 .on("click",function(){
@@ -308,10 +414,16 @@ function init(){
                  .attr("width",svgWidth)
                  .attr("height",svgHeight);
 
+    var bgColor = document.getElementById("plot");
+    bgColor.getElementsByTagName("svg")[0].style.backgroundColor="#e6e6fa";
+         
+             
+
 //Adding the chart group
 
 var chartGroup = svg.append("g")
         .attr("transform",`translate(${margin.left},${margin.top})`);
+        
 
     var city_name="New York"
 
@@ -353,11 +465,11 @@ var chartGroup = svg.append("g")
     // append x axis
     var xAxis = chartGroup.append("g")
     .classed("x-axis", true)
-    .attr("transform", `translate(0, ${height})`)
+    .attr("transform", `translate(0, ${height})`).attr("stroke-width",3)
     .call(bottomAxis);
 
     // append y axis
-    var yAxis=chartGroup.append("g")
+    var yAxis=chartGroup.append("g").attr("stroke-width",3)
     .call(leftAxis);
 
     //Create circles
@@ -372,6 +484,8 @@ var chartGroup = svg.append("g")
                                 .attr("opacity","0.75")
                                 .classed("stateCircle",true);
 
+    
+
     //Adding ToolTip 
    var circlesGroup= updateToolTip(chosenXAxis,chosenYAxis,circlesGroup);
     
@@ -380,12 +494,24 @@ var chartGroup = svg.append("g")
     var xLabelsGroup= chartGroup.append("g")
                                 .attr("transform",`translate(${width / 2}, ${height + 20})`);
     
+    // var threeDayLabel = xLabelsGroup.append("text")
+    //                             .attr("x", 0)
+    //                             .attr("y", 20)
+    //                             .attr("value", "three days") // value to grab for event listener
+    //                             .classed("active", true)
+    //                             .text("Three Days");
+    // var fiveDayLabel = xLabelsGroup.append("text")
+    //                             .attr("x", 0)
+    //                             .attr("y", 40)
+    //                             .attr("value", "five days") // value to grab for event listener
+    //                             .classed("inactive", true)
+    //                             .text("Five Days");
     var weekLabel = xLabelsGroup.append("text")
                                 .attr("x", 0)
                                 .attr("y", 20)
                                 .attr("value", "week") // value to grab for event listener
                                 .classed("active", true)
-                                .text("A week");                            
+                                .text("Days");                            
 
 
     //Group for y Axis labels
@@ -413,6 +539,61 @@ var chartGroup = svg.append("g")
                                 .attr("value", "pressure") // value to grab for event listener
                                 .classed("inactive", true)
                                 .text("Pressure");                            
+    
+    // x axis labels event listner
+//     xLabelsGroup.selectAll("text")
+//         .on("click",function(){
+// //Getting the value selected
+//     var value =d3.select(this).attr("value");
+//     if(value !== chosenXAxis){
+//         //new chosen value
+//         chosenXAxis= value;
+//         //rendering the new scale
+//         xLinearScale=xScale(weatherData,chosenXAxis);
+//         //rendering the new axis
+//         xAxis= renderAxes(xLinearScale,chosenXAxis,xAxis);
+//         // rendering the new circles and their labels
+//         circlesGroup= renderCircles(circlesGroup,xLinearScale,chosenXAxis);
+//         // circlesLabels=renderCircleLabels(circlesLabels,xLinearScale,chosenXAxis);
+
+//         //Updating the tooltip
+//         circlesGroup=updateToolTip(chosenXAxis,chosenYAxis,circlesGroup);
+
+//         //change the chosen axis to bold
+//         if(chosenXAxis ==="age"){
+//             povertyLabel.classed("active",false)
+//                         .classed("inactive",true);
+//             ageLabel.classed("active",true)
+//                     .classed("inactive",false);
+//             incomeLabel.classed("active",false)
+//                         .classed("inactive",true);
+
+//         }
+//         else if(chosenXAxis ==="income"){
+//             povertyLabel.classed("active",false)
+//                         .classed("inactive",true);
+//             ageLabel.classed("active",false)
+//                     .classed("inactive",true);
+//             incomeLabel.classed("active",true)
+//                         .classed("inactive",false);
+                        
+
+//         }
+//         else if(chosenXAxis ==="poverty"){
+//             povertyLabel.classed("active",true)
+//                         .classed("inactive",false);
+//             ageLabel.classed("active",false)
+//                     .classed("inactive",true);
+//             incomeLabel.classed("active",false)
+//                         .classed("inactive",true);
+                        
+
+//         }
+
+// }
+
+//                 })
+                //console.log(chosenXAxis);
 
     yLabelsGroup.selectAll("text")
                 .on("click",function(){
