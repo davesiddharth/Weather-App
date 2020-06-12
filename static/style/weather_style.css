@@ -1,4 +1,12 @@
 /*
+Leaflet Map
+*/
+
+#map {
+  height: 100%;
+} 
+
+/*
 	stylesheet for weather app
 */
 
@@ -16,11 +24,8 @@ body {
 	margin-left:25px;
 	margin-right:25px;
 	margin-top: 25px;
+	margin-bottom: 25px;
   }
-
-  /* .container {
-	  margin-top: 25px;
-  } */
 
 /* weather section */
 #weather_card {
@@ -29,7 +34,7 @@ body {
 	border-radius: 20px;
 	color: rgb(255, 255, 255);
 	margin: 0;
-	padding: 0 15px;
+	/*padding: 0 15px;*/
 }
 
 .weather-head {
