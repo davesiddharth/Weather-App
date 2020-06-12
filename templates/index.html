@@ -18,8 +18,13 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
         <!-- stylesheet -->
         <link rel="stylesheet" type="text/css" href="static/style/weather_style.css">
+
+        <!-- weather map -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
     </head>
-    
+
     <body>
         <!-- Leaflet JavaScript -->
         <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
@@ -93,13 +98,21 @@
                     <div id="plot">
                         <h2>Scatter-plot</h2>
                     </div>
+                </div>
             </div>
         </div>
         <div class="map_area">
             <div class"row">
                 <div class="col-md-12 text-center">
-                    <div id="map">
-                        <h2>Leaflet Map</h2>
+                    <div id="map" style = "margin-left: 5%; width: 90%; height: 500px; position: center;">
+                        <script type="text/javascript" src="static/js/config.js"></script>
+                        <!-- JS -->
+                        <!-- <script type="text/javascript" src="static/js/weather-map.js"></script> -->
+                        <script type="text/javascript" src="static/js/heatmap.js"></script> 
+
+                        <!-- Leaflet heatmap plugin-->
+                        <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+                        <!-- https://github.com/Leaflet/Leaflet.heat -->
                     </div>
                 </div>
             </div>
