@@ -1,7 +1,7 @@
 var url = "/api/v1.0/weather_data";
 
 d3.json(url, function(response){
-  console.log(response);
+  //console.log(response);
 
   var heatArray = [];
 
@@ -75,8 +75,8 @@ L.control.layers(baseMaps, overlayMaps, {
 
 city_name = "New York";
 var url = `/api/v1.0/weather_data/${city_name}`
-console.log(url);
+//console.log(url);
 d3.json(url, function(response){
     // data.forEach(d =>console.log(d))
-    console.log(response)
+    //console.log(response)
 })
