@@ -35,27 +35,10 @@
                 <input id="city" class="form-control mr-sm-2" type="search" placeholder="Enter your city name" aria-label="Search">
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <!-- commented out remove the past days options <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                      <button type="button" class="btn my-sm-2 " style="background-color:papayawhip;">Past three Days!</button>
-                    
-                  </li>&nbsp;
-                  <li class="nav-item active">
-                    <button type="button" class="btn my-sm-2" style="background-color:papayawhip;">Past five Days!</button>
-                  
-                </li>&nbsp;
-                <li class="nav-item active">
-                    <button type="button" class="btn my-sm-2" style="background-color:papayawhip;">Past week!</button>
-                  
-                </li>
-                </ul>
-            </div>-->
             <span id="date" class="navbar-brand" style="position:relative; left:850px; top:2px background-color:papayawhip">11:00AM | Mar 3, 2018</span>
             
         </nav>
-        <div class="container">
+        <div class="overall">
             <div class="row">
                 <div class="col-md-5">
                     <div class="container-fluid">
@@ -65,7 +48,7 @@
                                         <div class="weather-head">
                                             <h1 id="location" class="text-center display-4">City</h1>
                                             <div class="row">							
-                                                <div id="description" class="description col-6 text-center">
+                                                <div id="description" class="description col-md-6 text-center">
                                                     <i id="icon-desc" class="wi wi-owm-200"></i>
                                                     <p class="desc"></p>			
                                                 </div>
@@ -101,19 +84,21 @@
                                         </div>
                                  </div>
                             </div>
-                            <div class="col-md-12">
-                                <div id="plot">
-                                    <h2>Scatter-plot</h2>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <div id="map">
-                        <h2>Leaflet map</h2>
+                <div class="col-md-7 text-center">
+                    <div id="plot">
+                        <h2>Scatter-plot</h2>
                     </div>
-
+            </div>
+        </div>
+        <div class="map_area">
+            <div class"row">
+                <div class="col-md-12 text-center">
+                    <div id="map">
+                        <h2>Leaflet Map</h2>
+                    </div>
                 </div>
             </div>
         </div>
