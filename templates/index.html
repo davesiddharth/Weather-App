@@ -42,21 +42,21 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <form class="form-inline my-2 my-lg-0">
-                <input id="city" class="form-control mr-sm-2" type="search" placeholder="Enter your city name" aria-label="Search">
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                <input id="city" class="form-control mr-sm-2" type="search" placeholder="New York" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"style="background-color:black"><strong>Search</strong></button>
             </form>
             <span id="date" class="navbar-brand" style="position:relative; left:850px; top:2px background-color:papayawhip">11:00AM | Mar 3, 2018</span>
             
         </nav>
         <div class="overall">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="weather_card" class="col-md-12">
                                     <div class="weather-head">
-                                        <h1 id="location" class="text-center display-4">City</h1>
+                                        <h1 id="location" class="text-center display-4"></h1>
                                         <div class="row">							
                                             <div id="description" class="description col-md-6 text-center">
                                                 <i id="icon-desc" class="wi wi-owm-200"></i>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 text-center">
+                <div class="col-md-7 text-center">
                     <div id="plot">
                     </div>
                 </div>
@@ -138,22 +138,17 @@
         <!--Scroll animation JS-->
         <script src="static/js/choreographer.min.js"></script>
         <script>
-        var choreographer = new Choreographer({
-            animations: [
-            {
-                range: [-1, window.innerHeight * 4],
-                selector: '.navbar',
-                type: 'scale',
-                style: 'opacity',
-                from: 1,
-                to: 0.5
-            }
-            ]
-        })
+            var choreographer = new Choreographer({
+                animations: [
+                { range: [-1, window.innerWidth], selector: '#date', type: 'change', style: 'backgroundColor', to: '#FFB6C1' },
+                { range: [-1, window.innerWidth / 2], selector: '#date', type: 'scale', style: 'opacity', from: 0.2, to: 1 },
+                { range: [window.innerWidth / 2, window.innerWidth], selector: '#date', type: 'change', style: '#FFB6C1', to: 'backgroundColor' },
+                ]
+            })
 
-        window.addEventListener('scroll', function() {
-            choreographer.runAnimationsAt(window.pageYOffset)
-        })
-      </script>
+            window.addEventListener('mousemove', function(e) {
+                choreographer.runAnimationsAt(e.clientX)
+            })
+    </script>
     </body>
 </html>
