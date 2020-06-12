@@ -17,7 +17,7 @@ d3.json(url, function(response){
     if (dateDay == 6) {
     if (country == "US") {
       if (coordinates) {
-        for (var j = 0; j < temperature; j++){
+        for (var j = 0; j < temperature*5; j++){
           heatArray.push([coordinates.lat, coordinates.lon])        }
       }
     }
