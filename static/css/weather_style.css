@@ -21,8 +21,8 @@ body {
 }
 
 .overall {
-	margin-left:25px;
-	margin-right:25px;
+	margin-left:50px;
+	margin-right:0px;
 	margin-top: 25px;
 	margin-bottom: 25px;
 	padding-top: 75px;
@@ -32,10 +32,16 @@ body {
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
 	width: 100%; /* Full width */
+	z-index: 9999;
   }
 
 .container-fluid {
-	padding-top: 45px;
+	padding-top: 30px;
+	padding-left: 50px;
+}
+
+#plot{
+	padding-left:15px;
 }
 
 /* weather section */
