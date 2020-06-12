@@ -36,7 +36,7 @@ function runEnter() {
     })
 
     /* Citation for the Weather Card source code which was then modified to suit our need
-    %%%%%%%%%%%%%%%%%%%%%%%% add the github url %%%%%%%%%%%%%%%%%%%%%%%%%5555
+    %%%%%%%%%%%%%%%%%%%%%%%% add the github url %%%%%%%%%%%%%%%%%%%%%%%%%
     Weather App Javascript code
     author: George Louis
     date:   3/11/2018
