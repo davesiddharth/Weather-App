@@ -45,7 +45,7 @@ function runEnter() {
     function run() {
         //variables
         var ipUrl = `/api/v1.0/weather_data/${city_name}`;
-        console.log(ipUrl);
+        //console.log(ipUrl);
         var location = document.getElementById("location");	
         var currentDate = new Date();
         //console.log(currentDate);
@@ -77,9 +77,9 @@ function runEnter() {
             httpReqWeather.onreadystatechange = function() {
                 if(httpReqWeather.readyState == 4 && httpReqWeather.status == 200) {
                     var jsonWeather = JSON.parse(httpReqWeather.responseText);
-                    console.log(jsonWeather)
+                    //console.log(jsonWeather)
                     const lastItem = jsonWeather.length - 1;
-                    console.log(lastItem);
+                    //console.log(lastItem);
                     var weatherDesc = jsonWeather[lastItem].weather[0].description;
                     var id = jsonWeather[lastItem].weather[0].id;
                     var icon = `<i class="wi wi-owm-${id}"></i>`
