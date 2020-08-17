@@ -37,4 +37,4 @@ Project End Date: 13th June 2020
 
 ![](images/leaflet_map_temp.PNG)
 
-![](images/website_demo.PNG)
+![](images/website.PNG)
