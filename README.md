@@ -29,12 +29,12 @@ Project End Date: 13th June 2020
 
 #### App Visuals:
 
-![](images/weather_card.png)
+![](images/weather_card.PNG)
 
-![](images/scatter_plot.png)
+![](images/scatter_plot.PNG)
 
-![](images/leaflet_map_wind.png)
+![](images/leaflet_map_wind.PNG)
 
-![](images/leaflet_map_temp.png)
+![](images/leaflet_map_temp.PNG)
 
-![](images/website_demo.png)
+![](images/website_demo.PNG)
